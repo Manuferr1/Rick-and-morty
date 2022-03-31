@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  font-family: 'sans-serif'; /* Resto de fuentes borradas*/
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.Sans{  /* nueva clase para definir el estilo de letra*/
+  font-family: 'sans-serif'; 
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
