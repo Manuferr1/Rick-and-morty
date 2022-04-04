@@ -1,23 +1,36 @@
-import React from 'react'
+import React from 'react'; 
+import ReactPaginate from 'react-paginate';
 
-export default function Pages({pageNumber, setpageNumber, results}) {
-  let page = pageNumber;
-  console.log(page);
-  const prev = () => {
-    if (page===1) return;   //para la funciónn para que no haya negativos 
-    page = page - 1;
-    setpageNumber(page);
-  }
-  const next = () => {
-    if (page === 42) return; 
-    page = page + 1; 
-    setpageNumber(page)
-  }
 
+const Pages = ({info, pageNumber, setpageNumber}) => {
   return (
-    <div className="my-3 d-flex justify-content-center gap-4"> 
-      <button onClick={prev}  className='btn btn-outline-dark'>Prev</button>
-      <button onClick={next} className='btn btn-outline-dark'>Next</button>
-    </div>
+    <ReactPaginate
+      className='justify-content-center pagination'  //Pagination lo pasa a row (bootstrap) 
+      pageCount={info?.pages}
+      pageRangeDisplayed={3}
+      previousLabel="Prev"
+      nextLabel="Next"
+      breakLabel="..."
+      initialPage={1}
+      forcePage={pageNumber}
+      previousClassName="btn btn-secondary "
+      nextClassName="btn btn-secondary"
+      pageLinkClassName="btn btn-secondary"
+      pageClassName='page-link'
+      activeClassName='active'
+      onPageChange={(e) =>{
+        setpageNumber(e.selected + 1);  //empieza desde 0
+        console.log(e.selected)}}
+
+
+     />
+    
   )
 }
+
+
+
+export default Pages
+
+
+ 

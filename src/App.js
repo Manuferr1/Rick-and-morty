@@ -15,10 +15,10 @@ function App() {
   const [data, setData] = useState([])
   const [search, setSearch] = useState("")
   let { info, results } = data; 
-  console.log(results) 
+  //console.log(info) 
 
   let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`;
-  //console.log(info)
+ 
  
   useEffect(() => { //cada vez que cambia API se usa el hook y hace fetch de API
     (async  () => {
@@ -52,9 +52,8 @@ function App() {
       </div>  
       {/*Pagination */}
       <div className="container">
-        <Pages pageNumber={pageNumber} setpageNumber={setpageNumber} results={results}/>
+        <Pages info={info} setpageNumber={setpageNumber} pageNumber={pageNumber} />
       </div>
-      
         
     </div>
   );
