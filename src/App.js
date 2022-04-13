@@ -1,9 +1,9 @@
-import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
 import { useState, useEffect } from "react";
 import universeRM from "./img/universeRM.jpg";
 import "./App.css";
-import Cards from "./components/Cards";
+import Cards from "./components/Cards/Cards";
 import Filter from "./components/Filter/Filter";
 import Pagination from "./components/Pagination/Pagination";
 import Search from "./components/Search/Search";
@@ -36,27 +36,26 @@ function App() {
         Rick & Morty
         <span className="text-primary"> Wiki</span>
       </h1>
-      <div className="container">
+      <div className="container-fluid">
         <Search setSearch={setSearch} />
       </div>
-      <div className="container">
+      <div className="container-fluid">
         {" "}
         {/*Bootstrap grid */}
         <div className="row">
-          <div className="col-3">
+          <div className="col-2 p-5">
             <Filter /> {/*Importacion del componente */}
           </div>
           <div className="col-8">
-            <div className="row">
-              {" "}
-              {/*ahora hay 12 columnas mas disponibles 8/3*/}
+            <div className="row p-5">
+              {/*ahora hay 12 columnas mas disponibles dentro de las 8*/}
               <Cards results={results} />
             </div>
           </div>
         </div>
       </div>
       {/*Pagination */}
-      <div className="container">
+      <div className="container p-1">
         <Pagination
           info={info}
           setpageNumber={setpageNumber}

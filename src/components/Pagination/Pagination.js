@@ -6,7 +6,7 @@ const Pagination = ({ info, pageNumber, setpageNumber }) => {
     <ReactPaginate
       className="justify-content-center pagination" //Pagination lo pasa a row (bootstrap)
       pageCount={info?.pages}
-      pageRangeDisplayed={1}
+      pageRangeDisplayed={2}
       previousLabel="Prev"
       nextLabel="Next"
       breakLabel="..."
