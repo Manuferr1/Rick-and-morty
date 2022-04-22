@@ -10,7 +10,7 @@ export default function Search({ setSearch }) {
         type="text"
         aria-label="Buscador"
         placeholder="Search Character"
-      />{" "}
+      />
       {/*Onchange: cuando la entrada cambia se activa*/}
       <button
         onClick={(e) => e.preventdefault}
