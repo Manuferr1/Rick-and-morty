@@ -20,7 +20,7 @@ function App() {
   let { info, results } = data;
   //console.log(info)
 
-  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&gender=${gender}&specie=${specie}`;
+  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&gender=${gender}&species=${specie}`;
   console.log(api);
 
   useEffect(() => {

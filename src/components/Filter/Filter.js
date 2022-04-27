@@ -3,37 +3,37 @@ import Genders from "./Category/Genders";
 import Species from "./Category/Species";
 import Status from "./Category/Status";
 
+
 export default function Filter({
   setStatus,
   setSpecie,
   setGender,
   setPageNumber,
+  
 }) {
+  const clear = () => {
+  setStatus("")
+  setSpecie("")
+  setGender("")
+  setPageNumber(1) }
   return (
     <div className="col-2" style={styles.accordion}>
       <div className="text-center fw-bold mb-4 fs-4 ">Filter</div>
       <div className="accordion" id="accordionExample">
-        <Genders
-          setGender={setGender}
-          setPageNumber={setPageNumber}
-        />
-        <Species
-          setSpecie={setSpecie}
-          setPageNumber={setPageNumber}
-        />
-        <Status
-          setStatus={setStatus}
-          setPageNumber={setPageNumber}
-        />
+        <Genders setGender={setGender} setPageNumber={setPageNumber} />
+        <Species setSpecie={setSpecie} setPageNumber={setPageNumber} />
+        <Status setStatus={setStatus} setPageNumber={setPageNumber} />
       </div>
       <div className="p-3">
         <a
-          href="#"
+          href=""
           className="text-center text-decoration-underline text-primary pe-auto "
+          onClick={() => {
+            clear();
+          }}
         >
-          {" "}
           Clear Filter
-        </a>{" "}
+        </a>
       </div>
     </div>
   );
