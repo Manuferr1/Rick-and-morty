@@ -35,7 +35,7 @@ const Species = () => {
         className="accordion-collapse collapse show"
         aria-labelledby="panelsStayOpen-headingTwo"
       >
-        <div className="accordion-body">
+        <div className="accordion-body d-flex flex-wrap gap-2"> 
           {species.map((items, index) => (
             <FilterButton
               key={index}

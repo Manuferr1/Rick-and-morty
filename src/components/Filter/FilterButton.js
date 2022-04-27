@@ -9,7 +9,7 @@ const FilterButton = ({ name, index, items }) => {
         id={`${name}-${index}`}
         autocomplete="off"
       />
-      <label className="btn btn-outline-primary" for={`${name}-${index}`}>
+      <label className="btn btn-outline-primary p-2" for={`${name}-${index}`}>
         {items}
       </label>
     </div>
@@ -19,3 +19,10 @@ const FilterButton = ({ name, index, items }) => {
 export default FilterButton;
 
 //id and for must be equal to get the checkbutton
+
+const styles = {
+  button : {
+    padding: "100px",
+    backgroundcolor: "blue"
+  }
+}

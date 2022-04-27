@@ -15,7 +15,7 @@ const Status = () => {
           aria-expanded="false"
           aria-controls="collapseThree"
         >
-          Status
+          <div>Status</div>
         </button>
       </h2>
       <div
@@ -24,7 +24,7 @@ const Status = () => {
         aria-labelledby="headingThree"
         data-bs-parent="#accordionExample"
       >
-        <div className="accordion-body">
+        <div className="accordion-body d-flex flex-wrap gap-2">
           {status.map((items, index) => (
             <FilterButton
               key={index}
