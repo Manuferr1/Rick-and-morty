@@ -1,5 +1,5 @@
 import "bootstrap/dist/js/bootstrap";
-import "../node_modules/bootstrap/dist/css/bootstrap.min.css"
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import { useState, useEffect } from "react";
 import universeRM from "./img/universeRM.jpg";
 import "./App.css";
@@ -43,11 +43,10 @@ function App() {
         {" "}
         {/*Bootstrap grid */}
         <div className="row">
-          <div className="col-2 p-5">
-            <Filter /> {/*Importacion del componente */}
-          </div>
+          <Filter />
+
           <div className="col-8">
-            <div className="row p-5">
+            <div className="row p-3">
               {/*ahora hay 12 columnas mas disponibles dentro de las 8*/}
               <Cards results={results} />
             </div>

@@ -13,8 +13,8 @@ const Cards = ({ results }) => {
             <div className="card border border-2 border-primary rounded-3" style={styles.contentCard}>
               <img src={image} alt="" className="img-fluid card-img-top" />
               <div className="card-body" style={styles.contentCard}>
-                <h5 className="Card-title text-center">{name}</h5>
-                <p className="Card-text text-center">Origen: {origin.name}</p>
+                <h5 className="Card-title text-start">{name}</h5>
+                <p className="Card-text text-start">Origen: {origin.name}</p>
               </div>
             </div>
           </div>
