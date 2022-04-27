@@ -3,7 +3,7 @@ import FilterButton from "../FilterButton";
 
 const status = ["Alive", "Dead", "Unknown"];
 
-const Status = () => {
+const Status = ({ setStatus, setPageNumber }) => {
   return (
     <div className="accordion-item">
       <h2 className="accordion-header" id="headingThree">
@@ -12,7 +12,7 @@ const Status = () => {
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#collapseThree"
-          aria-expanded="false"
+          aria-expanded="true"
           aria-controls="collapseThree"
         >
           <div>Status</div>
@@ -28,9 +28,10 @@ const Status = () => {
           {status.map((items, index) => (
             <FilterButton
               key={index}
-              name={status}
               index={index}
               items={items}
+              setPageNumber={setPageNumber}
+              display={setStatus}
             />
           ))}
         </div>

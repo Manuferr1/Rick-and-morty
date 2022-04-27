@@ -8,15 +8,20 @@ import Filter from "./components/Filter/Filter";
 import Pagination from "./components/Pagination/Pagination";
 import Search from "./components/Search/Search";
 import Navbar from "./components/Navbar/Navbar";
+import Genders from "./components/Filter/Category/Genders";
 
 function App() {
-  const [pageNumber, setpageNumber] = useState(1);
+  const [pageNumber, setPageNumber] = useState(0);
   const [data, setData] = useState([]);
   const [search, setSearch] = useState("");
+  const [status, setStatus] = useState("");
+  const [specie, setSpecie] = useState("");
+  const [gender, setGender] = useState("");
   let { info, results } = data;
   //console.log(info)
 
-  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`;
+  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}&status=${status}&gender=${gender}&specie=${specie}`;
+  console.log(api);
 
   useEffect(() => {
     //cada vez que cambia API se usa el hook y hace fetch de API
@@ -29,12 +34,12 @@ function App() {
   }, [api]);
 
   return (
-    <div className="App">
+    <div className="App Roboto">
       <Navbar />
-      <h1 className="text-center Sans my-2">
+      <h1 className="text-center my-2 fw-bold">
         {" "}
         Rick & Morty
-        <span className="text-primary"> Wiki</span>
+        <span className="text-primary"> Wiki </span>
       </h1>
       <div className="container-fluid">
         <Search setSearch={setSearch} />
@@ -43,9 +48,14 @@ function App() {
         {" "}
         {/*Bootstrap grid */}
         <div className="row">
-          <Filter />
+          <Filter
+            setStatus={setStatus}
+            setSpecie={setSpecie}
+            setGender={setGender}
+            setPageNumber={setPageNumber}
+          />
 
-          <div className="col-8">
+          <div className="col-9">
             <div className="row p-3">
               {/*ahora hay 12 columnas mas disponibles dentro de las 8*/}
               <Cards results={results} />
@@ -57,10 +67,12 @@ function App() {
       <div className="container p-1">
         <Pagination
           info={info}
-          setpageNumber={setpageNumber}
+          setPageNumber={setPageNumber}
           pageNumber={pageNumber}
         />
       </div>
+      {console.log(pageNumber, "STATUS", status, "SPECIE", specie, "GENDER", gender)}
+
     </div>
   );
 }

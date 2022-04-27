@@ -15,12 +15,13 @@ const species = [
   "Planet",
 ];
 
-const Species = () => {
+const Species = ({setSpecie, setPageNumber}) => {
   return (
+    //copiar de status las propiedades
     <div className="accordion-item">
       <h2 className="accordion-header" id="panelsStayOpen-headingTwo">
         <button
-          className="accordion-button"
+          className="accordion-button collapsed"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#panelsStayOpen-collapseTwo"
@@ -39,9 +40,10 @@ const Species = () => {
           {species.map((items, index) => (
             <FilterButton
               key={index}
-              name={species}
               index={index}
               items={items}
+              setPageNumber={setPageNumber}
+              display={setSpecie}
             />
           ))}
         </div>

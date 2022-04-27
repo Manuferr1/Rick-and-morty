@@ -3,12 +3,12 @@ import FilterButton from "../FilterButton";
 
 const genders = ["Female", "Male", "Genderless", "unknown"];
 
-const Genders = () => {
+const Genders = ({setGender, setPageNumber}) => {
   return (
     <div className="accordion-item">
       <h2 className="accordion-header" id="panelsStayOpen-headingOne">
         <button
-          className="accordion-button"
+          className="accordion-button collapsed"
           type="button"
           data-bs-toggle="collapse"
           data-bs-target="#panelsStayOpen-collapseOne"
@@ -27,9 +27,10 @@ const Genders = () => {
           {genders.map((items, index) => (
             <FilterButton
               key={index}
-              name={genders}
               index={index}
               items={items}
+              setPageNumber={setPageNumber}
+              display={setGender}
             />
           ))}
         </div>

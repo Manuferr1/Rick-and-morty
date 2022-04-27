@@ -1,10 +1,10 @@
 import React from "react";
 import ReactPaginate from "react-paginate";
 
-const Pagination = ({ info, pageNumber, setpageNumber }) => {
+const Pagination = ({ info, pageNumber, setPageNumber }) => {
   return (
     <ReactPaginate
-      className="justify-content-center pagination" //Pagination lo pasa a row (bootstrap)
+      className="justify-content-center pagination gap-1" //Pagination lo pasa a row (bootstrap)
       pageCount={info?.pages}
       pageRangeDisplayed={2}
       previousLabel="Prev"
@@ -17,7 +17,7 @@ const Pagination = ({ info, pageNumber, setpageNumber }) => {
       pageLinkClassName="btn btn-outline-primary"
       activeClassName="active"
       onPageChange={(e) => {
-        setpageNumber(e.selected + 1); //empieza desde 0
+        setPageNumber(e.selected + 1); //empieza desde 0
         console.log(e.selected);
         console.log(e);
       }}
