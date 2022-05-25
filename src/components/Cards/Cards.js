@@ -1,8 +1,10 @@
 // import React from 'react' no es necesario (comando rfc)
 import React from "react";
-
+const NO_CHARACTERS_FOUND = "No characters found"
 const Cards = ({ results }) => {
   let display;
+
+  //CAMBIAR POR TERNARIO 
 
   if (results) {
     display = results.map((x) => {
@@ -21,10 +23,13 @@ const Cards = ({ results }) => {
       );
     });
   } else {
-    display = "No characters found";
+    display = NO_CHARACTERS_FOUND;
   }
 
-  return <>{display}</>;
+  return(
+    
+     <>{display}</>
+  );
 };
 
 export default Cards;

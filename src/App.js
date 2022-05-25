@@ -8,10 +8,34 @@ import Filter from "./components/Filter/Filter";
 import Pagination from "./components/Pagination/Pagination";
 import Search from "./components/Search/Search";
 import Navbar from "./components/Navbar/Navbar";
-import Genders from "./components/Filter/Category/Genders";
+import Episodes from "./Pages/Episodes";
+import Location from "./Pages/Location";
+
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  NavLink,
+  Link,
+} from "react-router-dom";
 
 function App() {
-  const [pageNumber, setPageNumber] = useState(0);
+  return (
+    <Router>
+      <div className="App">
+        <Navbar />
+      </div>
+      <Routes>
+        <Route path="/" element={<Home />}/> 
+        <Route path="/Episodes" element={<Episodes />}/> 
+        <Route path="/Location" element={<Location />}/> 
+      </ Routes>
+    </Router>
+  );
+}
+
+const Home = () => {
+  const [pageNumber, setPageNumber] = useState(1);
   const [data, setData] = useState([]);
   const [search, setSearch] = useState("");
   const [status, setStatus] = useState("");
@@ -34,13 +58,7 @@ function App() {
   }, [api]);
 
   return (
-    <div className="App Roboto">
-      <Navbar />
-      <h1 className="text-center my-2 fw-bold">
-        {" "}
-        Rick & Morty
-        <span className="text-primary"> Wiki </span>
-      </h1>
+    <div className="App">
       <div className="container-fluid">
         <Search setSearch={setSearch} />
       </div>
@@ -71,10 +89,17 @@ function App() {
           pageNumber={pageNumber}
         />
       </div>
-      {console.log(pageNumber, "STATUS", status, "SPECIE", specie, "GENDER", gender)}
-
+      {console.log(
+        pageNumber,
+        "STATUS",
+        status,
+        "SPECIE",
+        specie,
+        "GENDER",
+        gender
+      )}
     </div>
   );
-}
+};
 
 export default App;
